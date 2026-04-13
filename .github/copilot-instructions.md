@@ -2,6 +2,10 @@
 
 이 문서는 GitHub Copilot CLI가 이 프로젝트에서 작업할 때 따라야 할 지침입니다.
 
+## 작업 시작 전
+
+**반드시 `.github/skills/getting-started.md`를 먼저 읽고**, 작업 유형에 맞는 skill 파일을 참조하세요.
+
 ## 프로젝트 개요
 
 - **프로젝트**: Ethereum Mainnet Explorer (Toy Project)
@@ -73,4 +77,4 @@ yarn validate
 ## 참조 문서
 
 - `spec/spec-eth-mainnet-explorer.md` - 프로젝트 스펙
-- `.github/skills/` - 코드 스타일, Git 컨벤션, 아키텍처 가이드
+- `.github/skills/getting-started.md` - 시작 가이드 (작업 유형별 참조 파일 안내)
