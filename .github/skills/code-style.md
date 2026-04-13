@@ -5,10 +5,12 @@
 ## 주석 (Comments)
 
 ### 언어
+
 - 모든 주석은 **한글**로 작성합니다.
 - JSDoc 태그(`@param`, `@returns` 등)는 영어 키워드를 사용하되, 설명은 한글로 작성합니다.
 
 ### 함수/컴포넌트 문서화
+
 ```typescript
 /**
  * 블록 목록을 테이블 형태로 표시하는 컴포넌트.
@@ -21,6 +23,7 @@ export function BlockList({ blocks }: BlockListProps) { ... }
 ```
 
 ### 인라인 주석
+
 - 복잡한 로직이나 비즈니스 규칙에 대해서만 주석을 답니다.
 - 자명한 코드에는 주석을 달지 않습니다.
 
@@ -37,15 +40,17 @@ return total / pageSize;
 ## 파일 명명 (File Naming)
 
 ### 규칙
-| 유형 | 패턴 | 예시 |
-|------|------|------|
-| 컴포넌트 | PascalCase | `BlockList.tsx`, `SearchBar.tsx` |
-| 훅 | kebab-case, `use-` 접두사 | `use-blocks-query.ts`, `use-blocks-viewmodel.ts` |
-| 유틸리티 | kebab-case | `format-utils.ts`, `etherscan-client.ts` |
-| 테스트 | 원본파일명 + `.test` | `BlockList.test.tsx`, `SearchBar.test.tsx` |
-| 스키마 | kebab-case | `block.ts`, `transaction.ts` |
+
+| 유형     | 패턴                      | 예시                                             |
+| -------- | ------------------------- | ------------------------------------------------ |
+| 컴포넌트 | PascalCase                | `BlockList.tsx`, `SearchBar.tsx`                 |
+| 훅       | kebab-case, `use-` 접두사 | `use-blocks-query.ts`, `use-blocks-viewmodel.ts` |
+| 유틸리티 | kebab-case                | `format-utils.ts`, `etherscan-client.ts`         |
+| 테스트   | 원본파일명 + `.test`      | `BlockList.test.tsx`, `SearchBar.test.tsx`       |
+| 스키마   | kebab-case                | `block.ts`, `transaction.ts`                     |
 
 ### 폴더 구조
+
 ```
 src/
 ├── app/                    # Next.js App Router 페이지
@@ -68,6 +73,7 @@ src/
 ## 컴포넌트 구조 (Component Structure)
 
 ### Props 타입 정의
+
 - `type`을 사용합니다 (interface 대신).
 - `Readonly<>` 래퍼를 사용하여 불변성을 명시합니다.
 
@@ -79,6 +85,7 @@ type BlockListProps = Readonly<{
 ```
 
 ### 컴포넌트 선언
+
 - 함수 선언문(`function`)을 사용합니다.
 - `export function`으로 직접 내보냅니다.
 
@@ -92,6 +99,7 @@ export default BlockList;
 ```
 
 ### className 조합
+
 - 배열 + `filter(Boolean).join(" ")` 패턴을 사용합니다.
 
 ```typescript
@@ -103,10 +111,12 @@ className={["base-class", conditional && "conditional-class", className]
 ## 테스트 (Testing)
 
 ### 테스트 파일 위치
+
 - 테스트 파일은 **원본 파일과 같은 폴더**에 위치합니다.
 - E2E 테스트는 `tests/e2e/` 폴더에 위치합니다.
 
 ### 테스트 명명
+
 ```typescript
 describe("BlockList", () => {
   it("renders block data in table format", () => { ... });
@@ -115,6 +125,7 @@ describe("BlockList", () => {
 ```
 
 ### 테스트 패턴
+
 - `@testing-library/react`의 `render`, `screen` 사용
 - 사용자 상호작용은 `@testing-library/user-event` 사용
 - `vitest`의 `describe`, `it`, `expect` 사용
